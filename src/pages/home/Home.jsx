@@ -1,16 +1,20 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import './home.scss'
+import "./home.scss";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <header>
         <h1>Heading 1</h1>
-        <AiOutlineSearch />
+        <button>
+          <AiOutlineSearch />
+        </button>
       </header>
+      <section>
+        {/* grid here! map! */}
+      </section>
     </div>
   );
 };
-
 export default Home;
