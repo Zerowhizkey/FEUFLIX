@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Root from "./pages/Root";
 import Home from "./pages/Home";
-import Search from "./pages/Search";
+import Browse from "./pages/Browse";
 
 const router = createBrowserRouter([
 	{
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: "search",
-				element: <Search />,
+				path: "browse",
+				element: <Browse />,
 			},
 		],
 	},
