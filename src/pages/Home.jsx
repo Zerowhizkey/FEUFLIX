@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <header>
+        <h1>Heading 1</h1>
+        <AiOutlineSearch />
+      </header>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
