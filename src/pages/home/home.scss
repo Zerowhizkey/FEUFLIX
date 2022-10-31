@@ -1,0 +1,34 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
+body {
+  background-color: $primary-color;
+  color: $font-color;
+
+  .home {
+    margin: 0px 30px 0px 30px;
+    header {
+      h1 {
+        font-size: 2.5rem;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        background-color: transparent;
+        border: none;
+        svg {
+          width: 35px;
+          height: 35px;
+          color: $font-color;
+        }
+      }
+      button:active{
+        svg{
+            color: $secondary-color;
+        }
+      }
+    }
+  }
+}
