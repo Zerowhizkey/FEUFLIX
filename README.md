@@ -23,6 +23,7 @@ const handleAddProject = async () => {
 
 ## Code guide
 * Mobile first 
+* Camelcase to name jsx files
 * Bottom navbar 
 * Home 
 * Search
