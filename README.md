@@ -12,6 +12,8 @@ const handleAddProject = async () => {
         await addProject();
     };
 ``` 
+* RAFCE for React files
+* No delete of Import React from React 
 
 ## Code guide
 * Mobile first 
