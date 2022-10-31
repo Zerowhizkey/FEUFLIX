@@ -22,7 +22,7 @@ const handleAddProject = async () => {
 * No delete of Import React from React 
 
 ## Code guide
-* Mobile first 
+* Mobile first - Dimensions: iPhone SE
 * Camelcase to name jsx files
 * Bottom navbar 
 * Home 
