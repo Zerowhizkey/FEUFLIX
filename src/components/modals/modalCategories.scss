@@ -1,0 +1,27 @@
+.background {
+  background-color: #121421;
+  height: 540px;
+  width: 340px;
+}
+
+.modal {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.close-button {
+  background-color: #121421;
+  height: 35px;
+  width: 35px;
+  border-width: 0px;
+  svg {
+    color: white;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.modal-body {
+  color: white;
+}
