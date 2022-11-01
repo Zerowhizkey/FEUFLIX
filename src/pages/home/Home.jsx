@@ -8,7 +8,7 @@ const Home = () => {
   const [show, setShow] = useState(false);
   const { movies } = useMovies();
 
-  const movieList = movies.results
+  const movieList = movies.results;
   const url =
     "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg";
 
@@ -30,10 +30,13 @@ const Home = () => {
         <h3>Upcoming:</h3>
         <section>
           {/* map out posters onClick=modal*/}
-          {movieList.map((movie) => (
-            // <img src={movie.poster_path}></img>
-            <h1>{movie.original_title}</h1>
-          ))}
+          {movieList &&
+            movieList.map((movie) => (
+              <div key={movie.id}>
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}></img>
+                <h1>{movie.original_title}</h1>
+              </div>
+            ))}
           <img
             src={url}
             alt="figth club"
