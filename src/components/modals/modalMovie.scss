@@ -20,7 +20,7 @@
   border: 1px solid rgba(18, 20, 33, 0.3);
   position: absolute;
   top: 0;
-  left: 0;
+  left: 1;
   z-index: 2;
 }
 
@@ -28,20 +28,29 @@
   display: flex;
   justify-content: space-between;
   padding: 5px 10px 10px 25px;
+  margin-bottom: 5px;
 }
 
 .modal-body {
   color: white;
 }
 
-.modal-list {
-  width: 260px;
-  padding-inline-start: 0px;
-  li {
-    list-style: none;
-    border-bottom: solid white;
-    border-bottom-width: 1px;
+.modal-img {
+  padding: 25px 0px 0px 0px;
+  position: relative;
+  left: -5px;
+  img {
+    width: 270px;
+    height: 250px;
   }
+}
+
+.modal-header {
+  margin: 0;
+}
+
+.modal-text {
+  width: 270px;
 }
 
 .close-button {
