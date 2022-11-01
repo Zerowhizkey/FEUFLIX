@@ -3,6 +3,7 @@ import "./App.css";
 import Root from "./pages/Root";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
+import { MovieProvider } from "./context/MovieContext";
 
 const router = createBrowserRouter([
 	{
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
 function App() {
 	return (
 		<div className="App">
-			<RouterProvider router={router} />
+			<MovieProvider>
+				<RouterProvider router={router} />
+			</MovieProvider>
 		</div>
 	);
 }
