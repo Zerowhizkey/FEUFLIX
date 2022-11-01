@@ -1,14 +1,12 @@
 import React from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import "./modalCategories.scss";
 
 const ModalCategories = () => {
   return (
     <div className="background">
       <section className="modal">
-        <button className="close-button">
-          <AiOutlineCloseCircle />
-        </button>
-        <div>
+        <div className="modal-body">
           <h3>All categories</h3>
           <ul>
             <li>
@@ -28,6 +26,9 @@ const ModalCategories = () => {
             </li>
           </ul>
         </div>
+        <button className="close-button">
+          <AiOutlineCloseCircle />
+        </button>
       </section>
     </div>
   );
