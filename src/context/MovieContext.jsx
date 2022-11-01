@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { getMovies } from "../api/api";
 
 export const MovieContext = createContext();
@@ -21,7 +21,7 @@ export const MovieProvider = ({ children }) => {
 };
 
 export const useMovies = () => {
-	const context = useMovies(MovieContext);
+	const context = useContext(MovieContext);
 	if (!context) {
 		throw new Error("useMovies is outside MovieProvider");
 	}
