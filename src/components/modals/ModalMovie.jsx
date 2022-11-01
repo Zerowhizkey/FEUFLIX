@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import "./modalMovie.scss";
 
-const ModalMovie = () => {
+const ModalMovie = ({ setIsOpen }) => {
   return (
-    <div>ModalMovie</div>
-  )
-}
+    <>
+      <div className="darkBG" onClick={() => setIsOpen(false)} />
+      <div className="modal-background">
+        <section className="modal">
+          <div className="modal-body">
+           <img className="modal-img" src="src goes here" alt="movie poster" />
+          </div>
+          <button className="close-button" onClick={() => setIsOpen(false)}>
+            <AiOutlineCloseCircle />
+          </button>
+        </section>
+      </div>
+    </>
+  );
+};
 
-export default ModalMovie
+export default ModalMovie;
