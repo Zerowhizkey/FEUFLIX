@@ -1,0 +1,47 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
+body {
+  color: $font-color;
+  margin: 0px 30px 0px 30px;
+  header {
+    h1 {
+      font-size: 2.5rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: none;
+      svg {
+        width: 35px;
+        height: 35px;
+        color: $font-color;
+      }
+    }
+    button:active {
+      svg {
+        color: $secondary-color;
+      }
+    }
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 80px;
+    img {
+      width: 130px;
+    }
+  }
+}
