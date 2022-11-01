@@ -24,15 +24,17 @@ const handleAddProject = async () => {
 ## Code guide
 * Mobile first - Dimensions: iPhone SE
 * Camelcase to name jsx files
+* Double quotes 
 * Bottom navbar 
 * Home 
 * Search
 * Modal 
 
 ## Style guide
-* SCSS styling 
-* Primary color - bakgrounds - #121421
-* Secondary color - buttongs, active - #2BB876
+* SCSS styling '
+* Kebab-casing for classnames 
+* Primary color - backgrounds - #121421
+* Secondary color - buttons, active - #2BB876
 * Font Family - Tajawal, sans-serif
 ``` 
 <style>
@@ -44,13 +46,13 @@ const handleAddProject = async () => {
 * Heading 3 Bold 24px 1.5rem 
 * Body Large Light 300 16px 1rem
 * Body Mini Light 14px 0.875rem
-* Icons 24 px 
+* Icons 35 px 
 * AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft
 * Card
 ```
 background: rgba(18,20,33,0.16);
 border-radius: 16px;
-box-shadow: 0,4px 30px rgba(0,0,0,0.1);
+box-shadow: 0 4px 30px rgba(0,0,0,0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(18,20,33,0.3); 
