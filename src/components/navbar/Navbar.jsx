@@ -21,7 +21,7 @@ const Navbar = () => {
 						to="home"
 						style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
 					>
-						<AiOutlineHome size={35} />
+						<AiOutlineHome size={35}/>
 					</NavLink>
 				</li>
 				<li>
