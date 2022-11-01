@@ -1,10 +1,11 @@
-import axios from "axios"
+import axios from "axios";
 
-const getMovies = async () => { 
-    const { data } = await axios.get("https://api.themoviedb.org/3/movie/{movie_id}/lists?api_key=<<api_key>>&language=en-US&page=1", {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
-    
-}
+export const getMovies = async () => {
+	const { data } = await axios.get(
+		`${import.meta.env.VITE_URL_KEY}list/1?api_key=${
+			import.meta.env.VITE_API_KEY
+		}`
+	);
+	console.log(data);
+	return data;
+};
