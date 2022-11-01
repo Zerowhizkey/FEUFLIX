@@ -42,9 +42,11 @@ const handleAddProject = async () => {
 @import url('https://fonts.googleapis.com/css2?famiy=Tajawal:wght@300;400&display=swap');
 </style>
 ```
+* All headings are set in root
 * Heading 1 Bold 44px 2.5rem
 * Heading 2 Medium 36px 2.25rem
 * Heading 3 Bold 24px 1.5rem 
+* Heading 4 Regular 20px 1.25rem
 * Body Large Light 300 16px 1rem
 * Body Mini Light 14px 0.875rem
 * Icons 35 px 
