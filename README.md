@@ -18,7 +18,7 @@ const handleAddProject = async () => {
         await addProject();
     };
 ``` 
-* RAFCE for React files
+* rafce for React files
 * No delete of Import React from React 
 
 ## Code guide
@@ -31,7 +31,8 @@ const handleAddProject = async () => {
 * Modal 
 
 ## Style guide
-* SCSS styling '
+* SCSS styling 
+* Lowercase first letter for scss files
 * Kebab-casing for classnames 
 * Primary color - backgrounds - #121421
 * Secondary color - buttons, active - #2BB876
