@@ -8,11 +8,9 @@ import "./browse.scss";
 const Browse = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const { foundMovie, searchMovie } = useMovies();
+  const { foundMovie, searchMovie, popular } = useMovies();
 
-  const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
-
 
   const handleSearch = () => {
     searchMovie(searchInput);
@@ -39,6 +37,7 @@ const Browse = () => {
           <AiOutlineDown />
         </button>
       </section>
+      {isOpen && <ModalCategories setIsOpen={setIsOpen}/>}
       <h4>Results for : {searchInput}</h4>
 
       {foundMovie.length !== 0 ? (
