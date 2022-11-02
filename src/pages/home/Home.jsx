@@ -7,6 +7,7 @@ import ModalMovie from "../../components/modals/ModalMovie";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState("");
   const [id, setId] = useState("");
   const { upcoming, popular } = useMovies();
   const upcomingMovies = upcoming.results;
@@ -32,8 +33,11 @@ const Home = () => {
             upcomingMovies.map((movie) => (
               <div
                 key={movie.id}
-                onClick={() => [setIsOpen(true), setId(movie.title)]}
-                className="movie-card"
+                onClick={() => [
+                  setIsOpen(true),
+                  setTitle(movie.title),
+                  setId(movie.id),
+                ]}
               >
                 <div className="img-box">
                   <img
@@ -46,7 +50,7 @@ const Home = () => {
                 </div>
               </div>
             ))}
-          {isOpen && <ModalMovie setIsOpen={setIsOpen} id={id} />}
+          {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
         </section>
 
         {/* //////////////////Popular////////////////// */}
@@ -56,8 +60,11 @@ const Home = () => {
             popularMovies.map((movie) => (
               <div
                 key={movie.id}
-                onClick={() => [setIsOpen(true), setId(movie.title)]}
-                className="movie-card"
+                onClick={() => [
+                  setIsOpen(true),
+                  setTitle(movie.title),
+                  setId(movie.id),
+                ]}
               >
                 <div className="img-box">
                   <img
@@ -73,7 +80,7 @@ const Home = () => {
                 </div>
               </div>
             ))}
-          {isOpen && <ModalMovie setIsOpen={setIsOpen} id={id} />}
+          {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
         </section>
       </main>
     </div>

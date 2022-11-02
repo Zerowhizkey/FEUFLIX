@@ -1,5 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getUpcomings, getPopulars, searchMovies } from "../api/api";
+import {
+	getUpcomings,
+	getPopulars,
+	searchMovies,
+	discoverMovies,
+} from "../api/api";
 
 export const MovieContext = createContext();
 
@@ -7,6 +12,7 @@ export const MovieProvider = ({ children }) => {
 	const [upcoming, setUpcoming] = useState([]);
 	const [popular, setPopular] = useState([]);
 	const [foundMovie, setFoundMovie] = useState([]);
+	const [allMovie, setAllMovie] = useState([]);
 
 	const getUpcoming = async () => {
 		const data = await getUpcomings();
@@ -23,14 +29,27 @@ export const MovieProvider = ({ children }) => {
 		setFoundMovie(data);
 	};
 
+	const discoverMovie = async (page) => {
+		const data = await discoverMovies(page);
+		setAllMovie(data);
+	};
+
 	useEffect(() => {
 		getUpcoming();
 		getPopular();
+		discoverMovie(1);
 	}, []);
 
 	return (
 		<MovieContext.Provider
-			value={{ upcoming, popular, searchMovie, foundMovie }}
+			value={{
+				upcoming,
+				popular,
+				searchMovie,
+				foundMovie,
+				allMovie,
+				discoverMovie,
+			}}
 		>
 			{children}
 		</MovieContext.Provider>
