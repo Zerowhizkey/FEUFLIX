@@ -10,8 +10,8 @@
 }
 
 .modal-background {
-  min-height: 550px;
-  width: 340px;
+  min-height: 100px;
+ 
   background: rgba(18, 20, 33, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -26,16 +26,40 @@
 
 .modal {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 5px 10px 10px 25px;
+  padding: 5px 10px 10px 5px;
 }
 
 .modal-body {
   color: white;
+
+
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+
+  .close-button {
+    background: none;
+    height: 35px;
+    width: 35px;
+    border-width: 0px;
+    svg {
+      color: white;
+      height: 35px;
+      width: 35px;
+    }
+
+}
+
 }
 
 .modal-list {
-  width: 260px;
+  margin: 5% 0 5% 0%;
   padding-inline-start: 0px;
   li {
     list-style: none;
@@ -44,14 +68,4 @@
   }
 }
 
-.close-button {
-  background: none;
-  height: 35px;
-  width: 35px;
-  border-width: 0px;
-  svg {
-    color: white;
-    height: 35px;
-    width: 35px;
-  }
-}
+
