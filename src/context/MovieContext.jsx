@@ -1,15 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getMovies, searchMovies } from "../api/api";
+import { getUpcomings, getPopulars, searchMovies } from "../api/api";
 
 export const MovieContext = createContext();
 
 export const MovieProvider = ({ children }) => {
-	const [movies, setMovies] = useState([]);
+	const [upcoming, setUpcoming] = useState([]);
+	const [popular, setPopular] = useState([]);
 	const [foundMovie, setFoundMovie] = useState([]);
 
-	const getMovie = async () => {
-		const data = await getMovies();
-		setMovies(data);
+	const getUpcoming = async () => {
+		const data = await getUpcomings();
+		setUpcoming(data);
+	};
+
+	const getPopular = async () => {
+		const data = await getPopulars();
+		setPopular(data);
 	};
 
 	const searchMovie = async (query) => {
@@ -18,11 +24,14 @@ export const MovieProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
-		getMovie();
+		getUpcoming();
+		getPopular();
 	}, []);
 
 	return (
-		<MovieContext.Provider value={{ movies, searchMovie, foundMovie }}>
+		<MovieContext.Provider
+			value={{ upcoming, popular, searchMovie, foundMovie }}
+		>
 			{children}
 		</MovieContext.Provider>
 	);

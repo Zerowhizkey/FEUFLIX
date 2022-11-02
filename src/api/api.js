@@ -1,12 +1,22 @@
 import axios from "axios";
 
-export const getMovies = async () => {
+export const getPopulars = async () => {
 	const { data } = await axios.get(
-		`${import.meta.env.VITE_URL_KEY}list/1?api_key=${
+		`${import.meta.env.VITE_URL_KEY}movie/popular?api_key=${
 			import.meta.env.VITE_API_KEY
 		}`
 	);
-	console.log(data);
+	// console.log(data);
+	return data;
+};
+
+export const getUpcomings = async () => {
+	const { data } = await axios.get(
+		`${import.meta.env.VITE_URL_KEY}movie/upcoming?api_key=${
+			import.meta.env.VITE_API_KEY
+		}`
+	);
+	// console.log(data);
 	return data;
 };
 
@@ -16,7 +26,7 @@ export const searchMovies = async (query) => {
 			import.meta.env.VITE_API_KEY
 		}&query=${query}`
 	);
-	console.log(data);
+	// console.log(data);
 	return data;
 };
 
