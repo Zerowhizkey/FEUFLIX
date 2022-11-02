@@ -1,41 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch, AiOutlineDown } from "react-icons/ai";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { useMovies } from "../../context/MovieContext";
 import "./browse.scss";
-//import axios from "axios";
+
 
 const Browse = () => {
   const [searchInput, setSearchInput] = useState(""); // use state för input
   const [filteredResults, setFilteredResults] = useState([]); // Filter input
-  const [APIData, setAPIData] = useState([]); // Byt ut till context hook
+  const { movies } = useMovies(); // Importera custom hook
+  const movieList = movies.results;
 
-  // Matcha input med filter funktion
-  //Handle Change
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/search/multi?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
-  //   `
-  //     )
-  //     .then((response) => {
-  //       setAPIData(response.data);
-  //     });
-  // }, []);
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
 
     if (searchInput !== "") {
-      const filteredData = APIData.filter((item) => {
-        return Object.values(item)
+      const filteredData = movieList.filter((item) => {
+        searchInput.includes() === item.original_title;
+        console.log(item.original_title);
+        return Object.values(item.original_title)
           .join(" ")
           .toLowerCase()
           .includes(searchInput.toLowerCase());
       });
       setFilteredResults(filteredData);
     } else {
-      setFilteredResults(APIData);
+      setFilteredResults(movieList);
     }
   };
 
@@ -60,19 +51,22 @@ const Browse = () => {
         </h3>
       </section>
       <h3>Results for : {searchInput}</h3>
-      {searchInput.length < 1
+      {searchInput
         ? filteredResults.map((item) => {
             return (
               <section key={item.id}>
-                <img src={item.movie_id} />
+                <h3>{item.original_title}</h3>
               </section>
             );
           })
-        : APIData.map((item) => {
+        : movieList &&
+          movieList.map((movie) => {
             return (
-              <section key={item.id}>
-                <h3>New movies</h3>
-                <img src={item.movie} />
+              <section key={movie.id}>
+                <h3>{movie.original_title}</h3>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                />
               </section>
             );
           })}
