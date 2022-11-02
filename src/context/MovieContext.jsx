@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getMovies } from "../api/api";
+import { getMovies, searchMovies } from "../api/api";
 
 export const MovieContext = createContext();
 
@@ -11,12 +11,19 @@ export const MovieProvider = ({ children }) => {
 		setMovies(data);
 	};
 
+	const searchMovie = async (query) => {
+		const data = await searchMovies(query);
+		setMovies(data);
+	};
+
 	useEffect(() => {
 		getMovie();
 	}, []);
 
 	return (
-		<MovieContext.Provider value={{ movies }}>{children}</MovieContext.Provider>
+		<MovieContext.Provider value={{ movies, searchMovie }}>
+			{children}
+		</MovieContext.Provider>
 	);
 };
 
