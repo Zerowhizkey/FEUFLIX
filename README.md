@@ -25,6 +25,7 @@ const handleAddProject = async () => {
 * Mobile first - Dimensions: iPhone SE
 * Camelcase to name jsx files
 * Double quotes 
+* All movies uses title and not orginal_title
 * Bottom navbar 
 * Home 
 * Search
@@ -47,7 +48,7 @@ const handleAddProject = async () => {
 * Heading 2 Medium 36px 2.25rem
 * Heading 3 Bold 24px 1.5rem 
 * Heading 4 Regular 20px 1.25rem
-* Body Large Light 300 16px 1rem
+* Heading 5 Regular 16px 1rem
 * Body Mini Light 14px 0.875rem
 * Icons 35 px 
 * AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft

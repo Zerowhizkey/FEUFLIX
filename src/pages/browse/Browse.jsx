@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { AiOutlineSearch, AiOutlineDown } from "react-icons/ai";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useMovies } from "../../context/MovieContext";
+import ModalCategories from "../../components/modals/ModalCategories";
 import "./browse.scss";
 
 const Browse = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const { foundMovie, searchMovie, popular, upcoming } = useMovies();
+  const { foundMovie, searchMovie } = useMovies();
 
   const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
 
+
   const handleSearch = () => {
     searchMovie(searchInput);
   };
-  console.log(foundMovie);
 
   return (
     <div>
@@ -32,7 +34,7 @@ const Browse = () => {
         </button>
       </div>
       <section className="category-list">
-        <button>
+        <button onClick={() => setIsOpen(true)}>
           <h5>All Categories</h5>
           <AiOutlineDown />
         </button>

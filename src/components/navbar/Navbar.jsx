@@ -34,7 +34,7 @@ const Navbar = () => {
 				</li>
 				<li>
 					<NavLink
-						to={"*/"}
+						to={"test"}
 						style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
 					>
 						<AiOutlineUser size={35}/>
