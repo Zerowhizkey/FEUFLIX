@@ -5,6 +5,7 @@ export const MovieContext = createContext();
 
 export const MovieProvider = ({ children }) => {
 	const [movies, setMovies] = useState([]);
+	const [foundMovie, setFoundMovie] = useState([]);
 
 	const getMovie = async () => {
 		const data = await getMovies();
@@ -13,7 +14,7 @@ export const MovieProvider = ({ children }) => {
 
 	const searchMovie = async (query) => {
 		const data = await searchMovies(query);
-		setMovies(data);
+		setFoundMovie(data);
 	};
 
 	useEffect(() => {
@@ -21,7 +22,7 @@ export const MovieProvider = ({ children }) => {
 	}, []);
 
 	return (
-		<MovieContext.Provider value={{ movies, searchMovie }}>
+		<MovieContext.Provider value={{ movies, searchMovie, foundMovie }}>
 			{children}
 		</MovieContext.Provider>
 	);
