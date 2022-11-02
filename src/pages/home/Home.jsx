@@ -6,13 +6,11 @@ import "./home.scss";
 import ModalMovie from "../../components/modals/ModalMovie";
 
 const Home = () => {
-
   const [isOpen, setIsOpen] = useState(false);
   const [id, setId] = useState("");
   const { upcoming, popular } = useMovies();
   const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
-
 
   return (
     <div className="home">
@@ -24,40 +22,38 @@ const Home = () => {
           </Link>
         </button>
       </header>
-      {/* Popular:? */}
-      {/* Latest:? */}
       <main>
-        {/* Upcoming: */}
+        {/* //////////////////Upcoming////////////////// */}
         <h3>Upcoming:</h3>
         <section>
           {upcomingMovies &&
             upcomingMovies.map((movie) => (
               <div
                 key={movie.id}
-                onClick={() => [setIsOpen(true), setId(movie.id)]}
+                onClick={() => [setIsOpen(true), setId(movie.title)]}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 ></img>
-                <h1>{movie.original_title}</h1>
+                <h1>{movie.title}</h1>
               </div>
             ))}
           {isOpen && <ModalMovie setIsOpen={setIsOpen} id={id} />}
         </section>
-        {/* Top rated: */}
 
+        {/* //////////////////Popular////////////////// */}
         <h3>Popular:</h3>
         <section>
           {popularMovies &&
             popularMovies.map((movie) => (
               <div
                 key={movie.id}
-                onClick={() => [setIsOpen(true), setId(movie.id)]}
+                onClick={() => [setIsOpen(true), setId(movie.title)]}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 ></img>
-                <h1>{movie.original_title}</h1>
+                <h1>{movie.title}</h1>
               </div>
             ))}
           {isOpen && <ModalMovie setIsOpen={setIsOpen} id={id} />}
