@@ -13,7 +13,6 @@ const Home = () => {
   const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
 
-  console.log(upcomingMovies);
 
   return (
     <div className="home">
@@ -38,6 +37,7 @@ const Home = () => {
                   setTitle(movie.title),
                   setId(movie.id),
                 ]}
+                className='movie-card'
               >
                 <div className="img-box">
                   <img
@@ -65,6 +65,7 @@ const Home = () => {
                   setTitle(movie.title),
                   setId(movie.id),
                 ]}
+                className='movie-card'
               >
                 <div className="img-box">
                   <img
