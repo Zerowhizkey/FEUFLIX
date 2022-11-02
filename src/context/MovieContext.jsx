@@ -4,6 +4,7 @@ import {
 	getPopulars,
 	searchMovies,
 	discoverMovies,
+	getCategories,
 } from "../api/api";
 
 export const MovieContext = createContext();
@@ -13,6 +14,7 @@ export const MovieProvider = ({ children }) => {
 	const [popular, setPopular] = useState([]);
 	const [foundMovie, setFoundMovie] = useState([]);
 	const [allMovie, setAllMovie] = useState([]);
+	const [category, setCategorie] = useState([]);
 
 	const getUpcoming = async () => {
 		const data = await getUpcomings();
@@ -34,10 +36,16 @@ export const MovieProvider = ({ children }) => {
 		setAllMovie(data);
 	};
 
+	const getcategory = async () => {
+		const data = await getCategories();
+		setCategorie(data); 
+	}
+
 	useEffect(() => {
 		getUpcoming();
 		getPopular();
 		discoverMovie(1);
+		getcategory(); 
 	}, []);
 
 	return (
@@ -49,6 +57,7 @@ export const MovieProvider = ({ children }) => {
 				foundMovie,
 				allMovie,
 				discoverMovie,
+				category
 			}}
 		>
 			{children}
