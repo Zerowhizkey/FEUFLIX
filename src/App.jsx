@@ -4,7 +4,7 @@ import Root from "./pages/Root";
 
 import Browse from "./pages/browse/Browse";
 import Home from "./pages/home/Home";
-
+import Test from "./pages/test/Test";
 import { MovieProvider } from "./context/MovieContext";
 
 
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
         path: "browse",
         element: <Browse />,
       },
+      {
+        path: "test",
+        element: <Test />
+      }
     ],
   },
 ]);
