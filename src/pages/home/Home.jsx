@@ -6,12 +6,13 @@ import "./home.scss";
 import ModalMovie from "../../components/modals/ModalMovie";
 
 const Home = () => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [id, setId] = useState("");
   const { upcoming, popular } = useMovies();
-
   const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
+
 
   return (
     <div className="home">
@@ -44,6 +45,7 @@ const Home = () => {
           {isOpen && <ModalMovie setIsOpen={setIsOpen} id={id} />}
         </section>
         {/* Top rated: */}
+
         <h3>Popular:</h3>
         <section>
           {popularMovies &&
