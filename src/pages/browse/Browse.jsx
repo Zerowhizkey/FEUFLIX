@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { AiOutlineSearch, AiOutlineDown } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineDown, AiOutlineStar } from "react-icons/ai";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useMovies } from "../../context/MovieContext";
 import ModalCategories from "../../components/modals/ModalCategories";
 import "./browse.scss";
+import ModalMovie from "../../components/modals/ModalMovie";
 
 const Browse = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenCat, setIsOpenCat] = useState(false);
+  const [title, setTitle] = useState("");
+  const [id, setId] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const { foundMovie, searchMovie, popular } = useMovies();
 
@@ -32,18 +36,29 @@ const Browse = () => {
         </button>
       </div>
       <section className="category-list">
-        <button onClick={() => setIsOpen(true)}>
+        
+        <button onClick={() => setIsOpenCat(true)}>
           <h5>All Categories</h5>
           <AiOutlineDown />
         </button>
+        
       </section>
-      {isOpen && <ModalCategories setIsOpen={setIsOpen}/>}
+      {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+
       <h4>Results for : {searchInput}</h4>
 
       {foundMovie.length !== 0 ? (
         <section>
           {foundMovie.results.map((movie) => (
-            <div className="movie-card" key={movie.id}>
+            <div
+              className="movie-card"
+              key={movie.id}
+              onClick={() => [
+                setIsOpen(true),
+                setTitle(movie.title),
+                setId(movie.id),
+              ]}
+            >
               <div className="image-box">
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -51,17 +66,29 @@ const Browse = () => {
               </div>
 
               <div className="title-card">
-                <p>{movie.release_date}</p>
+                <div className="rating">
+                  <AiOutlineStar />
+                  <p>{movie.vote_average}/10</p>
+                </div>
                 <h4>{movie.title}</h4>
               </div>
             </div>
           ))}
+          {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
         </section>
       ) : (
         <section>
           {popularMovies &&
             popularMovies.map((movie) => (
-              <div className="movie-card" key={movie.id}>
+              <div
+                className="movie-card"
+                key={movie.id}
+                onClick={() => [
+                  setIsOpen(true),
+                  setTitle(movie.title),
+                  setId(movie.id),
+                ]}
+              >
                 <div className="image-box">
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -69,11 +96,15 @@ const Browse = () => {
                 </div>
 
                 <div className="title-card">
-                  <p>{movie.release_date}</p>
+                  <div className="rating">
+                    <AiOutlineStar />
+                    <p>{movie.vote_average}/10</p>
+                  </div>
                   <h4>{movie.title}</h4>
                 </div>
               </div>
             ))}
+          {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
         </section>
       )}
     </div>

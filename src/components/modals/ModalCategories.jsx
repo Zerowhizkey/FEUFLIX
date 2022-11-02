@@ -3,29 +3,34 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
 import "./modalCategories.scss";
 
-const ModalCategories = ({ setIsOpen }) => {
+const ModalCategories = ({ setIsOpenCat }) => {
   const { category } = useMovies();
   const categories = category.genres; //id och name
 
   return (
     <>
-      <div className="darkBG" onClick={() => setIsOpen(false)} />
+      <div className="darkBG" onClick={() => setIsOpenCat(false)} />
       <div className="modal-background">
         <section className="modal">
-          <div className="modal-body">
+          <div className="modal-header">
             <h3>All categories</h3>
+            <button
+              className="close-button"
+              onClick={() => setIsOpenCat(false)}
+            >
+              <AiOutlineCloseCircle />
+            </button>
+          </div>
+          <div className="modal-body">
             <ul className="modal-list">
               {categories &&
                 categories.map((category) => (
-                    <li key={category.id}>
-                      <h4>{category.name}</h4>
-                    </li>
+                  <li key={category.id}>
+                    <h4>{category.name}</h4>
+                  </li>
                 ))}
             </ul>
           </div>
-          <button className="close-button" onClick={() => setIsOpen(false)}>
-            <AiOutlineCloseCircle />
-          </button>
         </section>
       </div>
     </>
