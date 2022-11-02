@@ -25,6 +25,7 @@ const handleAddProject = async () => {
 * Mobile first - Dimensions: iPhone SE
 * Camelcase to name jsx files
 * Double quotes 
+* All movies uses title and not orginal_title
 * Bottom navbar 
 * Home 
 * Search
