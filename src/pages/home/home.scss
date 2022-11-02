@@ -40,8 +40,39 @@ body {
     justify-content: center;
     justify-items: center;
     margin-bottom: 80px;
-    img {
-      width: 130px;
+    .movie-card {
+      height: 305px;
+    }
+    .img-box {
+      height: 195px;
+      img {
+        width: 130px;
+      }
+    }
+    .title-card {
+      display: flex;
+      flex-direction: column;
+      p {
+        margin: 0px;
+        font-weight: lighter;
+      }
+      .rating {
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 8px;
+        }
+        p {
+          margin: 0px;
+          font-weight: lighter;
+        }
+      }
+      h4 {
+        font-size: 1.25rem;
+        font-weight: normal;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
     }
   }
 }
