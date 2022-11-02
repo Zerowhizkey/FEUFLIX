@@ -3,9 +3,9 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import "./modalMovie.scss";
 import { useMovies } from "../../context/MovieContext";
 
-const ModalMovie = ({ setIsOpen, id }) => {
-  const { movies } = useMovies();
-  const movieList = movies.results;
+const ModalMovie = ({ setIsOpen, title }) => {
+  const { foundMovie } = useMovies();
+  const movieList = foundMovie.results;
   /* Instruction for setting up a modal
 
 * Import useState from react in the parent component
@@ -30,7 +30,7 @@ const [isOpen, setIsOpen] = useState(false);
           <div className="modal-body">
             {movieList &&
               movieList
-                .filter((movie) => movie.id === id)
+                .filter((movie) => movie.title === title)
                 .map((movie) => (
                   <div key={movie.id} className="modal-img">
                     <img
