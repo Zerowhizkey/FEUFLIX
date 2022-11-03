@@ -13,11 +13,15 @@ const Home = () => {
   const upcomingMovies = upcoming.results;
   const popularMovies = popular.results;
 
-
   return (
     <div className="home">
       <header>
-        <h1>FEUFLIX</h1>
+        <img
+          src="https://i.ibb.co/Nj4qRPD/feuflix-2.png"
+          alt="feuflix-1"
+          border="0"
+          className="logo"
+        />
         <button>
           <Link to="/browse">
             <AiOutlineSearch />
@@ -25,6 +29,10 @@ const Home = () => {
         </button>
       </header>
       <main>
+        <h1>
+          Welcome to <span>FeaFlix</span>
+          <br></br>streaming for action!
+        </h1>
         {/* //////////////////Upcoming////////////////// */}
         <h3>Upcoming:</h3>
         <section>
@@ -37,7 +45,7 @@ const Home = () => {
                   setTitle(movie.title),
                   setId(movie.id),
                 ]}
-                className='movie-card'
+                className="movie-card"
               >
                 <div className="img-box">
                   <img
@@ -65,7 +73,7 @@ const Home = () => {
                   setTitle(movie.title),
                   setId(movie.id),
                 ]}
-                className='movie-card'
+                className="movie-card"
               >
                 <div className="img-box">
                   <img
