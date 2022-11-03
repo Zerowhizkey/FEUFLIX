@@ -12,9 +12,16 @@ const Browse = () => {
   const [title, setTitle] = useState("");
   const [id, setId] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  const { foundMovie, searchMovie, popular } = useMovies();
+  const { foundMovie, searchMovie, allMovie, discoverMovie } = useMovies();
 
-  const popularMovies = popular.results;
+  const movies = allMovie.results;
+
+  const handleplus = () => {
+    discoverMovie(allMovie.page + 1);
+  };
+  const handleminus = () => {
+    discoverMovie(allMovie.page - 1);
+  };
 
   const handleSearch = () => {
     searchMovie(searchInput);
@@ -36,12 +43,10 @@ const Browse = () => {
         </button>
       </div>
       <section className="category-list">
-        
         <button onClick={() => setIsOpenCat(true)}>
           <h5>All Categories</h5>
           <AiOutlineDown />
         </button>
-        
       </section>
       {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
 
@@ -78,8 +83,8 @@ const Browse = () => {
         </section>
       ) : (
         <section>
-          {popularMovies &&
-            popularMovies.map((movie) => (
+          {movies &&
+            movies.map((movie) => (
               <div
                 className="movie-card"
                 key={movie.id}
@@ -105,6 +110,8 @@ const Browse = () => {
               </div>
             ))}
           {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
+          <button onClick={handleminus}>-</button>
+          <button onClick={handleplus}>+</button>
         </section>
       )}
     </div>
