@@ -7,8 +7,8 @@ const ModalCategories = ({ setIsOpenCat }) => {
   const { category, genreMovie } = useMovies();
   const categories = category.genres; //id och name
 
-  const handleInput = async (id) => {
-    await genreMovie(id);
+  const handleInput = async (id, title) => {
+    await genreMovie(id, title);
     setIsOpenCat(false);
   };
 
@@ -32,7 +32,7 @@ const ModalCategories = ({ setIsOpenCat }) => {
                 categories.map((category) => (
                   <li key={category.id}>
                     <button
-                      onClick={() => handleInput(category.id)}                    >
+                      onClick={() => handleInput(category.id, category.name)}                    >
                       <h4>{category.name}</h4>
                     </button>
                   </li>

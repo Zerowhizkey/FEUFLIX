@@ -17,6 +17,7 @@ export const MovieProvider = ({ children }) => {
 	const [allMovie, setAllMovie] = useState([]);
 	const [category, setCategorie] = useState([]);
 	const [genre, setGenre] = useState(null);
+	const [genreTitle, setGenreTitle] = useState('')
 
 	const getUpcoming = async () => {
 		const data = await getUpcomings();
@@ -38,9 +39,10 @@ export const MovieProvider = ({ children }) => {
 		setAllMovie(data);
 	};
 
-	const genreMovie = async (genre) => {
+	const genreMovie = async (genre, title) => {
 		const data = await genreMovies(genre);
 		setGenre(data)
+		setGenreTitle(title)
 	};
 
 	const getcategory = async () => {
@@ -66,7 +68,8 @@ export const MovieProvider = ({ children }) => {
 				discoverMovie,
 				category,
 				genreMovie,
-				genre
+				genre,
+				genreTitle
 			}}
 		>
 			{children}
