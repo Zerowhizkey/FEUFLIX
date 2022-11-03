@@ -11,7 +11,7 @@
 
 .modal-background {
   min-height: 100px;
- 
+
   background: rgba(18, 20, 33, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -29,12 +29,13 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 10px 10px 5px;
+  overflow-y: auto;
 }
 
 .modal-body {
   color: white;
-
-
+  height: 65vh;
+  margin-bottom: 50px;
 }
 
 .modal-header {
@@ -42,7 +43,12 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 2em;
+  position: sticky;
+  top: 0px;
 
+  h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   .close-button {
     background: none;
     height: 35px;
@@ -53,9 +59,7 @@
       height: 35px;
       width: 35px;
     }
-
-}
-
+  }
 }
 
 .modal-list {
@@ -67,5 +71,3 @@
     border-bottom-width: 1px;
   }
 }
-
-
