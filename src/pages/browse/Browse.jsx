@@ -12,9 +12,12 @@ const Browse = () => {
   const [title, setTitle] = useState("");
   const [id, setId] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  const { foundMovie, searchMovie, allMovie, discoverMovie } = useMovies();
+  const { foundMovie, searchMovie, allMovie, discoverMovie, genre, category } =
+    useMovies();
 
   const movies = allMovie.results;
+  const categories = category.genres; //id och name
+  console.log(categories);
 
   const handleplus = () => {
     discoverMovie(allMovie.page + 1);
@@ -27,7 +30,8 @@ const Browse = () => {
     searchMovie(searchInput);
   };
 
-  return (
+  console.log(categories)
+  return !genre ? (
     <div>
       <div className="search-bar">
         <AiOutlineSearch />
@@ -114,6 +118,33 @@ const Browse = () => {
           <button onClick={handleplus}>+</button>
         </section>
       )}
+    </div>
+  ) : (
+    <div>
+       <div className="search-bar">
+        <AiOutlineSearch />
+
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search movie.."
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+        <button className="search-button" onClick={handleSearch}>
+          <BsFillArrowRightCircleFill />
+        </button>
+      </div>
+      <section className="category-list">
+        <button onClick={() => setIsOpenCat(true)}>
+          <h5>All Categories</h5>
+          <AiOutlineDown />
+        </button>
+      </section>
+      {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+
+      <h4>Results for : {genre.results.id}</h4>
+      {genre !== null &&
+        genre.results.map((movi) => <div key={movi.id}>{movi.title}</div>)}
     </div>
   );
 };
