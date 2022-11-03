@@ -5,6 +5,7 @@ import {
 	searchMovies,
 	discoverMovies,
 	getCategories,
+	genreMovies,
 } from "../api/api";
 
 export const MovieContext = createContext();
@@ -15,6 +16,7 @@ export const MovieProvider = ({ children }) => {
 	const [foundMovie, setFoundMovie] = useState([]);
 	const [allMovie, setAllMovie] = useState([]);
 	const [category, setCategorie] = useState([]);
+	const [genre, setGenre] = useState(null);
 
 	const getUpcoming = async () => {
 		const data = await getUpcomings();
@@ -36,16 +38,21 @@ export const MovieProvider = ({ children }) => {
 		setAllMovie(data);
 	};
 
+	const genreMovie = async (genre) => {
+		const data = await genreMovies(genre);
+		setGenre(data)
+	};
+
 	const getcategory = async () => {
 		const data = await getCategories();
-		setCategorie(data); 
-	}
+		setCategorie(data);
+	};
 
 	useEffect(() => {
 		getUpcoming();
 		getPopular();
 		discoverMovie(1);
-		getcategory(); 
+		getcategory();
 	}, []);
 
 	return (
@@ -57,7 +64,9 @@ export const MovieProvider = ({ children }) => {
 				foundMovie,
 				allMovie,
 				discoverMovie,
-				category
+				category,
+				genreMovie,
+				genre
 			}}
 		>
 			{children}
