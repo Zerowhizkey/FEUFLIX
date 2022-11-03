@@ -18,13 +18,10 @@ const Browse = () => {
     allMovie,
     discoverMovie,
     genre,
-    category,
     genreTitle,
   } = useMovies();
 
   const movies = allMovie.results;
-  // const categories = category.genres; //id och name
-  // console.log(genreTitle);
 
   const handleplus = () => {
     discoverMovie(allMovie.page + 1);
@@ -59,10 +56,6 @@ const Browse = () => {
         </button>
       </section>
       {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
-      {/* 
-      {searchMovie.length !== 0 && searchInput ? (
-
-        ) : <></>} */}
 
       {foundMovie.length !== 0 ? (
         <div>
@@ -155,9 +148,35 @@ const Browse = () => {
       </section>
       {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
 
-      {/* <h4>Results for: {genreTitle}</h4> */}
-      {genre !== null &&
-        genre.results.map((movi) => <div key={movi.id}>{movi.title}</div>)}
+      <section>
+        {genre !== null &&
+          genre.results.map((movie) => (
+            <div
+              className="movie-card"
+              key={movie.id}
+              onClick={() => [
+                setIsOpen(true),
+                setTitle(movie.title),
+                setId(movie.id),
+              ]}
+            >
+              <div className="image-box">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                ></img>
+              </div>
+
+              <div className="title-card">
+                <div className="rating">
+                  <AiOutlineStar />
+                  <p>{movie.vote_average}/10</p>
+                </div>
+                <h4>{movie.title}</h4>
+              </div>
+            </div>
+          ))}
+      </section>
+      {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
     </div>
   );
 };
