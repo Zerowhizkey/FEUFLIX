@@ -4,8 +4,13 @@ import { useMovies } from "../../context/MovieContext";
 import "./modalCategories.scss";
 
 const ModalCategories = ({ setIsOpenCat }) => {
-  const { category } = useMovies();
+  const { category, genreMovie } = useMovies();
   const categories = category.genres; //id och name
+
+  const handleInput = async (id) => {
+    await genreMovie(id);
+    setIsOpenCat(false);
+  };
 
   return (
     <>
@@ -26,7 +31,10 @@ const ModalCategories = ({ setIsOpenCat }) => {
               {categories &&
                 categories.map((category) => (
                   <li key={category.id}>
-                    <h4>{category.name}</h4>
+                    <button
+                      onClick={() => handleInput(category.id)}                    >
+                      <h4>{category.name}</h4>
+                    </button>
                   </li>
                 ))}
             </ul>
