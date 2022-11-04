@@ -1,0 +1,93 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
+body {
+
+    box-sizing: border-box;
+    header {
+        .logo {
+          width: 100px;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          background-color: transparent;
+          border: none;
+          svg {
+            width: 35px;
+            height: 35px;
+            color: $font-color;
+          }
+        }
+        button:active {
+          svg {
+            color: $secondary-color;
+          }
+        }
+      }
+  
+main {
+    
+   
+.card-section {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(4, 0.5fr);
+grid-column-gap: 0px;
+grid-row-gap: 20px;
+
+
+.card {
+   
+display: flex;
+background: rgba(152, 144, 144, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(152, 144, 144, 0.3);
+padding-top: 0.5em;
+.card-image {
+padding: 1em;
+  img {
+  border-radius: 10px;
+  }
+}
+
+}
+    }
+}
+}
+.card-contact {
+    padding: 1em 0;
+    display: flex;
+    gap: 1em;
+}
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 100%;
+    padding: 0.5em;
+    
+        svg{
+            color: white;
+            width: 20px;
+            height: 20px;
+        }
+    
+}
+
+h5 {
+    font-size: 1rem;
+    padding-top: 0.5em;
+}
+p {
+    padding-top: 0.5em;
+    font-size: 0.875;
+    margin: 0;
+}
