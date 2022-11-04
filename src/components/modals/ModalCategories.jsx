@@ -3,15 +3,15 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
 import "./modalCategories.scss";
 
-const ModalCategories = ({ setIsOpenCat }) => {
-	const { category, genreMovie } = useMovies();
+const ModalCategories = ({ setIsOpenCat, onChange }) => {
+	const { category, genreMovie, setFoundMovie } = useMovies();
 	const categories = category.genres; //id och name
 
 	const handleInput = async (id, title) => {
 		await genreMovie(id, title);
 		setIsOpenCat(false);
+		onChange();
 	};
-
 	return (
 		<>
 			<div className=" categories-darkBG" onClick={() => setIsOpenCat(false)} />

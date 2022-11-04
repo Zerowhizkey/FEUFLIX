@@ -12,7 +12,7 @@ const Categories = () => {
 
   return (
     <section className="browse-section">
-      {genre !== null &&
+      {genre.length !== 0 &&
         genre.results.map((movie) => (
           <div
             className="movie-card"
