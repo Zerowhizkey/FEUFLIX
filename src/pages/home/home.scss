@@ -2,9 +2,9 @@ $primary-color: #121421;
 $secondary-color: #2bb876;
 $font-color: #ffffff;
 
-.home {
+.home-body {
   color: $font-color;
-  header {
+  .home-header{
     overflow: hidden;
     margin-top: 10px;
     height: 50px;
@@ -15,7 +15,7 @@ $font-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    button {
+    .home-button {
       background-color: transparent;
       border: none;
       svg {
@@ -24,29 +24,29 @@ $font-color: #ffffff;
         color: $font-color;
       }
     }
-    button:active {
+    .home-button:active {
       svg {
         color: $secondary-color;
       }
     }
   }
-  main {
+  .home-main {
     margin: 0px 30px 0px 30px;
   }
-  h1 {
+  .home-h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-top: 0px;
-    span {
+    .home-span {
       color: $secondary-color;
     }
   }
-  h3 {
+  .home-h3 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.3em;
   }
-  section {
+  .home-section {
     display: grid;
     grid-template-columns: repeat(2, 150px);
     grid-template-rows: repeat(5, 1fr);

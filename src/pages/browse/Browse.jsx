@@ -37,7 +37,7 @@ const Browse = () => {
 
   return !genre ? (
     // no genre search:
-    <div>
+    <div className="browse-body">
       <header className="browse-header">
         <div className="search-bar">
           <AiOutlineSearch />
@@ -53,7 +53,7 @@ const Browse = () => {
           </button>
         </div>
         <section className="category-list">
-          <button onClick={() => setIsOpenCat(true)}>
+          <button className="category-button" onClick={() => setIsOpenCat(true)}>
             <h5>All Categories</h5>
             <AiOutlineDown />
           </button>
@@ -62,9 +62,9 @@ const Browse = () => {
       </header>
 
       {foundMovie.length !== 0 ? (
-        <div>
+        <div className="browse-body">
           <h4 className="results">Results for: {searchInput}</h4>
-          <section>
+          <section className="browse-section">
             {foundMovie.results.map((movie) => (
               <div
                 className="movie-card"
@@ -97,7 +97,7 @@ const Browse = () => {
         </div>
       ) : (
         // all movies
-        <section>
+        <section className="browse-section">
           {movies &&
             movies.map((movie) => (
               <div
@@ -132,7 +132,7 @@ const Browse = () => {
     </div>
   ) : (
     // genred searched
-    <div>
+    <div className="browse-body">
       <header className="browse-header">
         <div className="search-bar">
           <AiOutlineSearch />
@@ -148,7 +148,7 @@ const Browse = () => {
           </button>
         </div>
         <section className="category-list">
-          <button onClick={() => setIsOpenCat(true)}>
+          <button className="category-button" onClick={() => setIsOpenCat(true)}>
             <h5>{genreTitle}</h5>
             <AiOutlineDown />
           </button>
@@ -157,10 +157,10 @@ const Browse = () => {
       </header>
 
       {foundMovie.length !== 0 ? (
-        <div>
+        <div className="browse-body">
           {setGenreTitle("All Categories")}
           <h4 className="results">Results for: {searchInput}</h4>
-          <section>
+          <section className="browse-section">
             {foundMovie.results.map((movie) => (
               <div
                 className="movie-card"
@@ -193,7 +193,7 @@ const Browse = () => {
         </div>
       ) : (
         // genred movies
-        <section>
+        <section className="browse-section">
           {genre !== null &&
             genre.results.map((movie) => (
               <div
