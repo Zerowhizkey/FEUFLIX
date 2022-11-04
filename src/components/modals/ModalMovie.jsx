@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineStar  } from "react-icons/ai";
 import "./modalMovie.scss";
 import { useMovies } from "../../context/MovieContext";
 
@@ -17,30 +17,36 @@ const ModalMovie = ({ setIsOpen, title, id }) => {
 
   return (
     <>
-      <div className="darkBG" onClick={() => setIsOpen(false)} />
-      <div className="modal-background">
-        <section className="modal">
-          <div className="modal-body">
+      <div className="movie-modal-darkBG" onClick={() => setIsOpen(false)} />
+      <div className="movie-modal-background">
+        <section className="movie-modal">
+          <div className="movie-modal-body">
             {movieList &&
               movieList
                 .filter((movie) => movie.title === title)
                 .filter((movie) => movie.id === id)
                 .map((movie) => (
-                  <div key={movie.id} className="modal-img">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    />
-                    <h3 className="modal-header">{movie.title}</h3>
-                    {/* Rating needs to be decied how to look */}
-                    <div>{movie.vote_average}/10</div>
-                    {/* Sett a string max-length function when render data */}
-                    <div className="modal-text">{movie.overview}</div>
+                  <div key={movie.id} className="movie-modal-img">
+                    <div className="movie-modal-top-section">
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      />
+                      <button
+                        className="movie-modal-close-button"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <AiOutlineCloseCircle />
+                      </button>
+                    </div>
+                    <h3 className="movie-modal-header">{movie.title}</h3>
+                    <div className="rating">
+                      <AiOutlineStar />
+                      <p>{movie.vote_average}/10</p>
+                    </div>
+                    <div className="movie-modal-text">{movie.overview}</div>
                   </div>
                 ))}
           </div>
-          <button className="close-button" onClick={() => setIsOpen(false)}>
-            <AiOutlineCloseCircle />
-          </button>
         </section>
       </div>
     </>
