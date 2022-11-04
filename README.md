@@ -51,8 +51,8 @@ const handleAddProject = async () => {
 * Heading 5 Regular 16px 1rem
 * Body Mini Light 14px 0.875rem
 * Icons 35 px 
-* AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft
-* Images 100px width 
+* AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft - AiOutlineStar
+* Images 130px width 
 * Card
 ```
 background: rgba(18,20,33,0.16);
