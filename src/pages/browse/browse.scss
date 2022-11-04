@@ -5,8 +5,6 @@ $text-color: rgb(216, 209, 209);
 body {
     background-color: $primary-color;
     color: $text-color;
-    margin-left: 30px;
-    margin-right: 30px;
     section {
         display: grid;
         grid-template-columns: repeat(2, 150px);

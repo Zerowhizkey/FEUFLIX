@@ -1,4 +1,4 @@
-.darkBG {
+.categories-darkBG {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
@@ -9,7 +9,7 @@
   position: absolute;
 }
 
-.modal-background {
+.categories-modal-background {
   min-height: 100px;
 
   background: rgba(18, 20, 33, 0.16);
@@ -20,28 +20,26 @@
   border: 1px solid rgba(18, 20, 33, 0.3);
   position: fixed;
   top: 0;
-  left: 1;
-  z-index: 2;
+  z-index: 0;
 }
-
-.modal {
+.categories-modal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5px 10px 10px 5px;
+  width: 100vw;
   overflow-y: auto;
 }
 
-.modal-body {
+.categories-modal-body {
   color: white;
   height: 65vh;
   margin-bottom: 50px;
 }
 
-.modal-header {
+.categories-modal-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 2em;
   position: sticky;
   top: 0px;
@@ -49,7 +47,7 @@
   h3 {
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .close-button {
+  .categories-close-button {
     background: none;
     height: 35px;
     width: 35px;
@@ -62,7 +60,12 @@
   }
 }
 
-.modal-list {
+.cate-button {
+  background-color: transparent;
+  border: none;
+}
+
+.categories-modal-list {
   margin: 5% 0 5% 0%;
   padding-inline-start: 0px;
   li {
