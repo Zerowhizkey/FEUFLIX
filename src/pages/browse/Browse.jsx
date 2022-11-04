@@ -19,6 +19,7 @@ const Browse = () => {
     discoverMovie,
     genre,
     genreTitle,
+    setGenreTitle,
   } = useMovies();
 
   const movies = allMovie.results;
@@ -35,6 +36,7 @@ const Browse = () => {
   };
 
   return !genre ? (
+    // no genre search:
     <div>
       <div className="search-bar">
         <AiOutlineSearch />
@@ -92,6 +94,7 @@ const Browse = () => {
           </section>
         </div>
       ) : (
+        // all movies
         <section>
           {movies &&
             movies.map((movie) => (
@@ -126,6 +129,7 @@ const Browse = () => {
       )}
     </div>
   ) : (
+    // genred searched
     <div>
       <div className="search-bar">
         <AiOutlineSearch />
@@ -148,34 +152,72 @@ const Browse = () => {
       </section>
       {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
 
-      <section>
-        {genre !== null &&
-          genre.results.map((movie) => (
-            <div
-              className="movie-card"
-              key={movie.id}
-              onClick={() => [
-                setIsOpen(true),
-                setTitle(movie.title),
-                setId(movie.id),
-              ]}
-            >
-              <div className="image-box">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                ></img>
-              </div>
-
-              <div className="title-card">
-                <div className="rating">
-                  <AiOutlineStar />
-                  <p>{movie.vote_average}/10</p>
+      {foundMovie.length !== 0 ? (
+        <div>
+          {setGenreTitle('All Categories')}
+          <h4>Results for: {searchInput}</h4>
+          <section>
+            {foundMovie.results.map((movie) => (
+              <div
+                className="movie-card"
+                key={movie.id}
+                onClick={() => [
+                  setIsOpen(true),
+                  setTitle(movie.title),
+                  setId(movie.id),
+                ]}
+              >
+                <div className="image-box">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  ></img>
                 </div>
-                <h4>{movie.title}</h4>
+
+                <div className="title-card">
+                  <div className="rating">
+                    <AiOutlineStar />
+                    <p>{movie.vote_average}/10</p>
+                  </div>
+                  <h4>{movie.title}</h4>
+                </div>
               </div>
-            </div>
-          ))}
-      </section>
+            ))}
+            {isOpen && (
+              <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />
+            )}
+          </section>
+        </div>
+      ) : (
+        // genred movies
+        <section>
+          {genre !== null &&
+            genre.results.map((movie) => (
+              <div
+                className="movie-card"
+                key={movie.id}
+                onClick={() => [
+                  setIsOpen(true),
+                  setTitle(movie.title),
+                  setId(movie.id),
+                ]}
+              >
+                <div className="image-box">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  ></img>
+                </div>
+
+                <div className="title-card">
+                  <div className="rating">
+                    <AiOutlineStar />
+                    <p>{movie.vote_average}/10</p>
+                  </div>
+                  <h4>{movie.title}</h4>
+                </div>
+              </div>
+            ))}
+        </section>
+      )}
       {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
     </div>
   );
