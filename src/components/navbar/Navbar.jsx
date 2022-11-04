@@ -5,9 +5,9 @@ import { AiOutlineHome, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
 
 const Navbar = () => {
-	const { genreMovie, discoverMovie, setFoundMovie } = useMovies();
+	const { genreMovie, discoverMovie, setFoundMovie, setGenreTitle } = useMovies();
 	const handleInput = async (id, title) => {
-		await genreMovie(id, title), discoverMovie(1), setFoundMovie([]);
+		await genreMovie(id, title), discoverMovie(1), setFoundMovie([]), setGenreTitle("All Categories");
 
 	};
 	let activeStyle = {

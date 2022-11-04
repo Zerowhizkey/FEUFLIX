@@ -11,12 +11,12 @@ import "./browse.scss";
 const Browse = () => {
 	const [isOpenCat, setIsOpenCat] = useState(false);
 	const [searchInput, setSearchInput] = useState("");
-	const { foundMovie, searchMovie, genre } = useMovies();
+	const { foundMovie, searchMovie, genreTitle } = useMovies();
 
 	const handleSearch = () => {
 		searchMovie(searchInput);
 	};
-  console.log(foundMovie)
+	console.log(foundMovie);
 	return (
 		<div className="browse-body">
 			<header className="browse-header">
@@ -38,13 +38,8 @@ const Browse = () => {
 						className="category-button"
 						onClick={() => setIsOpenCat(true)}
 					>
-						<div>
-							{foundMovie.length === 0 ? (
-								<h5>All Categorys</h5>
-							) : (
-								<h5>{foundMovie.results.title}</h5>
-							)}
-						</div>
+						<h5>{genreTitle}</h5>
+
 						<AiOutlineDown />
 					</button>
 				</section>
