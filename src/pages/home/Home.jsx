@@ -24,11 +24,11 @@ const Home = () => {
           />
         <button className="home-button">
           <Link to="/browse">
-            <AiOutlineSearch />
+            <AiOutlineSearch className="search-icon"/>
           </Link>
         </button>
       </header>
-      <main className="home-main">
+      <main>
         <h1 className="home-h1">
           Welcome to <span className="home-span">FeaFlix</span>
           {/* <br></br>streaming for action! */}

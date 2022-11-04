@@ -39,7 +39,6 @@ const Browse = () => {
 						onClick={() => setIsOpenCat(true)}
 					>
 						<h5>{genreTitle}</h5>
-
 						<AiOutlineDown />
 					</button>
 				</section>
@@ -50,7 +49,6 @@ const Browse = () => {
 					/>
 				)}
 			</header>
-
 			{foundMovie.length !== 0 ? (
 				<div className="browse-body">
 					<h4 className="results">Results for: {searchInput}</h4>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar, AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
 import ModalMovie from "../modals/ModalMovie";
 import "./../../pages/browse/browse.scss";
@@ -13,10 +13,10 @@ const AllMovies = () => {
 
   const movies = allMovie.results;
 
-  const handleplus = () => {
+  const handleIncrement = () => {
     discoverMovie(allMovie.page + 1);
   };
-  const handleminus = () => {
+  const handleDecrement = () => {
     discoverMovie(allMovie.page - 1);
   };
 
@@ -49,8 +49,12 @@ const AllMovies = () => {
           </div>
         ))}
       {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
-      <button onClick={handleminus}>-</button>
-      <button onClick={handleplus}>+</button>
+      <button className="all-movies-button" onClick={handleDecrement}>
+        <AiOutlineCaretLeft/>
+      </button>
+      <button className="all-movies-button" onClick={handleIncrement}>
+        <AiOutlineCaretRight/>
+      </button>
     </section>
   );
 };

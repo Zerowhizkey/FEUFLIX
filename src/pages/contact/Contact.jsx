@@ -6,16 +6,16 @@ import "./contact.scss";
 const Contact = () => {
   return (
     <>
-      <header>
+      <header className="home-header">
         <img
           src="https://i.ibb.co/Nj4qRPD/feuflix-2.png"
           alt="feuflix-1"
           border="0"
           className="logo"
         />
-        <button>
+        <button className="home-button">
           <Link to="/browse">
-            <AiOutlineSearch />
+            <AiOutlineSearch className="search-icon"/>
           </Link>
         </button>
       </header>
@@ -97,7 +97,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-		  <div className="card">
+          <div className="card">
             <div className="card-image">
               <img
                 src="https://avatars.githubusercontent.com/u/92568728?v=4"
@@ -106,7 +106,7 @@ const Contact = () => {
             </div>
             <div className="card-info">
               <h5>Sandy Erani Amanda Congreve</h5>
-			  <p> Frontend Developer </p>
+              <p> Frontend Developer </p>
 
               <div className="card-contact">
                 <a className="card-link" href="https://github.com/congreves">
@@ -114,7 +114,10 @@ const Contact = () => {
                     <AiFillGithub />
                   </button>
                 </a>
-                <a className="card-link"  href="https://www.linkedin.com/in/sandycongreve/">
+                <a
+                  className="card-link"
+                  href="https://www.linkedin.com/in/sandycongreve/"
+                >
                   <button className="icon-button">
                     <AiFillLinkedin />
                   </button>

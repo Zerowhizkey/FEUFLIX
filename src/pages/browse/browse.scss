@@ -1,10 +1,8 @@
 $primary-color: #121421;
-$secondary-color: #2b8876;
-$text-color: rgb(216, 209, 209);
+$secondary-color: #2bb876;
+$font-color: #ffffff;
 
 .browse-body {
-  background-color: $primary-color;
-  color: $text-color;
   .browse-header {
     margin: 0px 30px 0px 30px;
   }
@@ -32,26 +30,12 @@ $text-color: rgb(216, 209, 209);
     .title-card {
       display: flex;
       flex-direction: column;
-      p {
-        margin: 0px;
-        font-weight: lighter;
-      }
       .rating {
         display: flex;
         align-items: center;
         svg {
           margin-right: 8px;
         }
-        p {
-          margin: 0px;
-          font-weight: lighter;
-        }
-      }
-      h4 {
-        font-size: 1.25rem;
-        font-weight: normal;
-        margin-top: 2px;
-        margin-bottom: 2px;
       }
     }
   }
@@ -74,7 +58,7 @@ $text-color: rgb(216, 209, 209);
   svg {
     width: 35px;
     height: 35px;
-    color: #2b8876;
+    color: $secondary-color;
   }
 
   .search-button {
@@ -87,7 +71,7 @@ $text-color: rgb(216, 209, 209);
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-    color: #2b8876;
+    color: $secondary-color;
   }
   .search-input {
     border: none;
@@ -136,23 +120,22 @@ $text-color: rgb(216, 209, 209);
   svg {
     width: 1rem;
     height: 1rem;
-    color: #2b8876;
+    color: $secondary-color;
   }
 }
 
-h5 {
-  font-size: 1rem;
-  margin: 0;
-  color: aliceblue;
-}
-h4 {
-  font-size: 1.25rem;
-  font-weight: normal;
-  margin-bottom: 1em;
-  color: aliceblue;
-}
-h3 {
-  font-size: 1.5rem;
-  margin: 0;
-  color: aliceblue;
+.all-movies-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 100%;
+  padding: 0.5em;
+
+  svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
 }
