@@ -2,7 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 import { AiOutlineHome, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { useMovies } from "../../context/MovieContext";
+
 const Navbar = () => {
+	const { genreMovie, discoverMovie, setFoundMovie } = useMovies();
+	const handleInput = async (id, title) => {
+		await genreMovie(id, title), discoverMovie(1), setFoundMovie([]);
+
+	};
 	let activeStyle = {
 		color: "#2BB876",
 		fontSize: "x-large",
@@ -28,6 +35,7 @@ const Navbar = () => {
 					<NavLink
 						to="browse"
 						style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
+						onClick={() => handleInput(null, 'All Categories')}
 					>
 						<AiOutlineSearch size={35}/>
 					</NavLink>
