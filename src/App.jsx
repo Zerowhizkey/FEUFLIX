@@ -1,12 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
+import "./app.scss";
 import Root from "./pages/Root";
 
 import Browse from "./pages/browse/Browse";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import { MovieProvider } from "./context/MovieContext";
-
 
 const router = createBrowserRouter([
   {
@@ -23,20 +22,19 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <Contact />
-      }
+        element: <Contact />,
+      },
     ],
   },
 ]);
 function App() {
-
-	return (
-		<div className="App">
-			<MovieProvider>
-				<RouterProvider router={router} />
-			</MovieProvider>
-		</div>
-	);
+  return (
+    <div className="App">
+      <MovieProvider>
+        <RouterProvider router={router} />
+      </MovieProvider>
+    </div>
+  );
 }
 
 export default App;
