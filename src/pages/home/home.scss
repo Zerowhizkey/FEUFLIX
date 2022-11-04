@@ -2,13 +2,13 @@ $primary-color: #121421;
 $secondary-color: #2bb876;
 $font-color: #ffffff;
 
-body {
+.home {
   color: $font-color;
-  // margin: 0px 30px 0px 30px;
   header {
     overflow: hidden;
     margin-top: 10px;
     height: 50px;
+    margin: 0px 30px 0px 30px;
     .logo {
       width: 100px;
     }
@@ -29,6 +29,9 @@ body {
         color: $secondary-color;
       }
     }
+  }
+  main {
+    margin: 0px 30px 0px 30px;
   }
   h1 {
     font-size: 2.5rem;

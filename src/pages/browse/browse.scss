@@ -3,8 +3,14 @@ $secondary-color: #2b8876;
 $text-color: rgb(216, 209, 209);
 
 body {
-    background-color: $primary-color;
-    color: $text-color;
+  background-color: $primary-color;
+  color: $text-color;
+  header {
+    margin: 0px 30px 0px 30px;
+  }
+  .results {
+    margin: 0px 30px 0px 30px;
+  }
   section {
     display: grid;
     grid-template-columns: repeat(2, 150px);

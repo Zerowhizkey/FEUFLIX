@@ -38,30 +38,32 @@ const Browse = () => {
   return !genre ? (
     // no genre search:
     <div>
-      <div className="search-bar">
-        <AiOutlineSearch />
+      <header className="browse-header">
+        <div className="search-bar">
+          <AiOutlineSearch />
 
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search movie.."
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <BsFillArrowRightCircleFill />
-        </button>
-      </div>
-      <section className="category-list">
-        <button onClick={() => setIsOpenCat(true)}>
-          <h5>All Categories</h5>
-          <AiOutlineDown />
-        </button>
-      </section>
-      {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search movie.."
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <BsFillArrowRightCircleFill />
+          </button>
+        </div>
+        <section className="category-list">
+          <button onClick={() => setIsOpenCat(true)}>
+            <h5>All Categories</h5>
+            <AiOutlineDown />
+          </button>
+        </section>
+        {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+      </header>
 
       {foundMovie.length !== 0 ? (
         <div>
-          <h4>Results for: {searchInput}</h4>
+          <h4 className="results">Results for: {searchInput}</h4>
           <section>
             {foundMovie.results.map((movie) => (
               <div
@@ -131,31 +133,33 @@ const Browse = () => {
   ) : (
     // genred searched
     <div>
-      <div className="search-bar">
-        <AiOutlineSearch />
+      <header className="browse-header">
+        <div className="search-bar">
+          <AiOutlineSearch />
 
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search movie.."
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          <BsFillArrowRightCircleFill />
-        </button>
-      </div>
-      <section className="category-list">
-        <button onClick={() => setIsOpenCat(true)}>
-          <h5>{genreTitle}</h5>
-          <AiOutlineDown />
-        </button>
-      </section>
-      {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search movie.."
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <BsFillArrowRightCircleFill />
+          </button>
+        </div>
+        <section className="category-list">
+          <button onClick={() => setIsOpenCat(true)}>
+            <h5>{genreTitle}</h5>
+            <AiOutlineDown />
+          </button>
+        </section>
+        {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
+      </header>
 
       {foundMovie.length !== 0 ? (
         <div>
-          {setGenreTitle('All Categories')}
-          <h4>Results for: {searchInput}</h4>
+          {setGenreTitle("All Categories")}
+          <h4 className="results">Results for: {searchInput}</h4>
           <section>
             {foundMovie.results.map((movie) => (
               <div
