@@ -49,9 +49,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
 
-  h3 {
-    margin-left: 5px;
-  }
+
 
   .categories-close-button {
     background: none;
@@ -75,9 +73,16 @@
 .categories-modal-list {
   margin: 5% 0 5% 0%;
   padding-inline-start: 0px;
-  li {
-    list-style: none;
-    border-bottom: solid white;
-    border-bottom-width: 1px;
-  }
+ 
+}
+.categories-list-item {
+  list-style: none;
+  border-bottom: solid white;
+  border-bottom-width: 1px;
+}
+
+.category {
+  font-family: "Tajawal", sans-serif;
+  padding: 0.80em 0em;
+  
 }

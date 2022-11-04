@@ -1,0 +1,91 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
+:root {
+  font-family: "Tajawal", sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  background-color: $primary-color;
+  margin: 0;
+  padding: 0;
+  color: $font-color;
+}
+
+main {
+  margin: 0px 30px 0px 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5em 0em;
+}
+h2 {
+  font-size: 2.25rem;
+  font-weight: medium;
+  margin: 0.5em 0em;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  margin-left: 5px;
+ 
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: $font-color;
+}
+h5 {
+  font-size: 1rem;
+  margin: 0;
+  color: $font-color;
+}
+p {
+  padding-top: 0.5em;
+  font-size: 0.875;
+  margin: 0;
+}
+
+.home-header {
+  overflow: hidden;
+  margin-top: 10px;
+  height: 75px;
+  margin: 0px 30px 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0em;
+}
+.logo {
+  width: 150px;
+}
+
+.home-button {
+  background-color: transparent;
+  border: none;
+  .search-icon {
+    width: 35px;
+    height: 35px;
+    color: white;
+  }
+  .home-button:active {
+
+.search-icon:active {
+  color: $secondary-color;
+}
+
+  }
+  
+}
+
+
+

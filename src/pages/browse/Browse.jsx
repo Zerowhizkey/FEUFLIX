@@ -38,7 +38,7 @@ const Browse = () => {
   return !genre ? (
     // no genre search:
     <div className="browse-body">
-      <header className="browse-header">
+      <div className="browse-header">
         <div className="search-bar">
           <AiOutlineSearch />
 
@@ -59,7 +59,7 @@ const Browse = () => {
           </button>
         </section>
         {isOpenCat && <ModalCategories setIsOpenCat={setIsOpenCat} />}
-      </header>
+      </div>
 
       {foundMovie.length !== 0 ? (
         <div className="browse-body">
