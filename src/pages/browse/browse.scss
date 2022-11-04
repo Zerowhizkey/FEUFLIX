@@ -123,3 +123,19 @@ $font-color: #ffffff;
     color: $secondary-color;
   }
 }
+
+.all-movies-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 100%;
+  padding: 0.5em;
+
+  svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+}
