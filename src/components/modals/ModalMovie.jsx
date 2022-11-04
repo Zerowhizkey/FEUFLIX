@@ -1,19 +1,11 @@
 import React, { useEffect } from "react";
-import { AiOutlineCloseCircle, AiOutlineStar  } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineStar } from "react-icons/ai";
 import "./modalMovie.scss";
 import { useMovies } from "../../context/MovieContext";
 
-const ModalMovie = ({ setIsOpen, title, id }) => {
-  const { foundMovie, searchMovie } = useMovies();
+const ModalMovie = ({ setIsOpen, movieData }) => {
+  const { foundMovie } = useMovies();
   const movieList = foundMovie.results;
-
-  const handleSearch = () => {
-    searchMovie(title);
-  };
-
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   return (
     <>
@@ -23,8 +15,8 @@ const ModalMovie = ({ setIsOpen, title, id }) => {
           <div className="movie-modal-body">
             {movieList &&
               movieList
-                .filter((movie) => movie.title === title)
-                .filter((movie) => movie.id === id)
+                .filter((movie) => movie.title === movieData.title)
+                .filter((movie) => movie.id === movieData.id)
                 .map((movie) => (
                   <div key={movie.id} className="movie-modal-img">
                     <div className="movie-modal-top-section">
