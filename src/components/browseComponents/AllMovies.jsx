@@ -1,23 +1,26 @@
 import React, { useState } from "react";
-import { AiOutlineStar, AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
+import {
+  AiOutlineStar,
+  AiOutlineCaretLeft,
+  AiOutlineCaretRight,
+} from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
 import ModalMovie from "../modals/ModalMovie";
 import "./../../pages/browse/browse.scss";
 
 const AllMovies = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState("");
-  const [id, setId] = useState("");
+  const [movieData, setMovieData] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  const { searchMovie, allMovie, discoverMovie } = useMovies();
+  const { searchMovie, allMovie, discoverMovie, foundMovie } = useMovies();
 
-  const movies = allMovie.results;
+  const movies = foundMovie.results;
 
   const handleIncrement = () => {
-    discoverMovie(allMovie.page + 1);
+    discoverMovie(foundMovie.page + 1);
   };
   const handleDecrement = () => {
-    discoverMovie(allMovie.page - 1);
+    discoverMovie(foundMovie.page - 1);
   };
 
   return (
@@ -27,11 +30,7 @@ const AllMovies = () => {
           <div
             className="movie-card"
             key={movie.id}
-            onClick={() => [
-              setIsOpen(true),
-              setTitle(movie.title),
-              setId(movie.id),
-            ]}
+            onClick={() => [setIsOpen(true), setMovieData(movie)]}
           >
             <div className="image-box">
               <img
@@ -48,12 +47,12 @@ const AllMovies = () => {
             </div>
           </div>
         ))}
-      {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
+      {isOpen && <ModalMovie setIsOpen={setIsOpen} movieData={movieData} />}
       <button className="all-movies-button" onClick={handleDecrement}>
-        <AiOutlineCaretLeft/>
+        <AiOutlineCaretLeft />
       </button>
       <button className="all-movies-button" onClick={handleIncrement}>
-        <AiOutlineCaretRight/>
+        <AiOutlineCaretRight />
       </button>
     </section>
   );

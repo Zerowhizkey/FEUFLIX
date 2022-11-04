@@ -6,8 +6,7 @@ import "./../../pages/browse/browse.scss";
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState("");
-  const [id, setId] = useState("");
+  const [movieData, setMovieData] = useState("");
   const { foundMovie } = useMovies();
 
   return (
@@ -17,11 +16,7 @@ const Search = () => {
           <div
             className="movie-card"
             key={movie.id}
-            onClick={() => [
-              setIsOpen(true),
-              setTitle(movie.title),
-              setId(movie.id),
-            ]}
+            onClick={() => [setIsOpen(true), setMovieData(movie)]}
           >
             <div className="image-box">
               <img
@@ -38,7 +33,7 @@ const Search = () => {
             </div>
           </div>
         ))}
-        {isOpen && <ModalMovie setIsOpen={setIsOpen} title={title} id={id} />}
+        {isOpen && <ModalMovie setIsOpen={setIsOpen} movieData={movieData} />}
       </section>
     </div>
   );
