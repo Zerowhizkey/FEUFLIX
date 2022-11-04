@@ -6,12 +6,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
 }
 
 .categories-modal-background {
-  min-height: 100px;
-
   background: rgba(18, 20, 33, 0.16);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -21,13 +19,16 @@
   position: fixed;
   top: 0;
   z-index: 0;
+  width: 90vw;
+  margin-left: 20px;
 }
+
 .categories-modal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .categories-modal-body {
@@ -41,14 +42,19 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 2em;
+  padding-bottom: 2em;
   position: sticky;
   top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
 
   h3 {
-    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 5px;
   }
+
   .categories-close-button {
     background: none;
+    padding: 0px;
     height: 35px;
     width: 35px;
     border-width: 0px;
