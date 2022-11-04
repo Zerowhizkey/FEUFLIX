@@ -64,6 +64,7 @@ export const MovieProvider = ({ children }) => {
 				popular,
 				searchMovie,
 				foundMovie,
+				setFoundMovie,
 				allMovie,
 				discoverMovie,
 				category,
