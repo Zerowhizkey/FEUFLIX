@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div className="home">
       <header>
-        <img
-          src="https://i.ibb.co/Nj4qRPD/feuflix-2.png"
-          alt="feuflix-1"
-          border="0"
-          className="logo"
-        />
+          <img
+            src="https://i.ibb.co/Nj4qRPD/feuflix-2.png"
+            alt="feuflix-1"
+            border="0"
+            className="logo"
+          />
         <button>
           <Link to="/browse">
             <AiOutlineSearch />
@@ -31,7 +31,7 @@ const Home = () => {
       <main>
         <h1>
           Welcome to <span>FeaFlix</span>
-          <br></br>streaming for action!
+          {/* <br></br>streaming for action! */}
         </h1>
         {/* //////////////////Upcoming////////////////// */}
         <h3>Upcoming:</h3>

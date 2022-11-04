@@ -69,6 +69,7 @@ export const MovieProvider = ({ children }) => {
 				category,
 				genreMovie,
 				genre,
+				setGenreTitle,
 				genreTitle
 			}}
 		>
