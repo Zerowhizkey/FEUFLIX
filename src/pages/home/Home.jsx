@@ -18,7 +18,7 @@ const Home = () => {
   const popularMovies = popular.results;
 
   return (
-    <div className="home-body">
+    <div>
       <header className="home-header">
         <img
           src="https://i.ibb.co/Nj4qRPD/feuflix-2.png"
@@ -33,11 +33,11 @@ const Home = () => {
         </button>
       </header>
       <main>
-        <h1 className="home-h1">
-          Welcome to <span className="home-span">FeaFlix</span>
+        <h1>
+          Welcome to <span>FeaFlix</span>
         </h1>
         {/* //////////////////Upcoming////////////////// */}
-        <h3 className="home-h3">Upcoming:</h3>
+        <h3>Upcoming:</h3>
         <section className="home-section">
           {upcomingMovies &&
             upcomingMovies.map((movie) => (
@@ -67,7 +67,7 @@ const Home = () => {
         </section>
 
         {/* //////////////////Popular////////////////// */}
-        <h3 className="home-h3">Popular:</h3>
+        <h3>Popular:</h3>
         <section className="home-section">
           {popularMovies &&
             popularMovies.map((movie) => (

@@ -32,9 +32,9 @@ const ModalCategories = ({ setIsOpenCat, onChange }) => {
             <ul className=" categories-modal-list">
               {categories &&
                 categories.map((category) => (
-                  <li key={category.id}>
+                  <li className="categories-list-item" key={category.id}>
                     <button
-                      className="cate-button"
+                      className="categories-button"
                       onClick={() => handleInput(category.id, category.name)}
                     >
                       <h4>{category.name}</h4>

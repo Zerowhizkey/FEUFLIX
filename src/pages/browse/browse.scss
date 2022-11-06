@@ -6,9 +6,11 @@ $font-color: #ffffff;
   .browse-header {
     margin: 0px 30px 0px 30px;
   }
+
   .results {
     margin: 0px 30px 0px 30px;
   }
+
   .browse-section {
     display: grid;
     grid-template-columns: repeat(2, 150px);
@@ -18,21 +20,26 @@ $font-color: #ffffff;
     justify-content: center;
     justify-items: center;
     margin-bottom: 80px;
+
     .movie-card {
       height: 305px;
     }
+
     .image-box {
       height: 195px;
       img {
         width: 130px;
       }
     }
+
     .title-card {
       display: flex;
       flex-direction: column;
+
       .rating {
         display: flex;
         align-items: center;
+
         svg {
           margin-right: 8px;
         }
@@ -73,6 +80,7 @@ $font-color: #ffffff;
     transition: 0.4s;
     color: $secondary-color;
   }
+
   .search-input {
     border: none;
     background: none;
@@ -105,6 +113,7 @@ $font-color: #ffffff;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 2em;
+
   .category-button {
     display: flex;
     align-items: center;
@@ -117,6 +126,7 @@ $font-color: #ffffff;
     border-radius: 40px;
     padding: 1em;
   }
+
   svg {
     width: 1rem;
     height: 1rem;

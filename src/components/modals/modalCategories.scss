@@ -1,3 +1,7 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
 .categories-darkBG {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
@@ -33,7 +37,7 @@
 }
 
 .categories-modal-body {
-  color: white;
+  color: $font-color;
   height: 65vh;
   margin-bottom: 50px;
 }
@@ -49,23 +53,22 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
 
-
-
   .categories-close-button {
     background: none;
     padding: 0px;
     height: 35px;
     width: 35px;
     border-width: 0px;
+
     svg {
-      color: white;
+      color: $font-color;
       height: 35px;
       width: 35px;
     }
   }
 }
 
-.cate-button {
+.categories-button {
   background-color: transparent;
   border: none;
 }
@@ -73,16 +76,11 @@
 .categories-modal-list {
   margin: 5% 0 5% 0%;
   padding-inline-start: 0px;
- 
-}
-.categories-list-item {
-  list-style: none;
-  border-bottom: solid white;
-  border-bottom-width: 1px;
 }
 
-.category {
-  font-family: "Tajawal", sans-serif;
-  padding: 0.80em 0em;
-  
+.categories-list-item {
+  list-style: none;
+  border-bottom: solid $font-color;
+  border-bottom-width: 1px;
+  padding: 0.8em 0em;
 }

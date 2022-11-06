@@ -7,7 +7,7 @@ import "./navbar.scss";
 const Navbar = () => {
   const { genreMovie, discoverMovie, setFoundMovie, setGenreTitle } =
     useMovies();
-	
+
   const handleInput = async (id, title) => {
     await genreMovie(id, title),
       discoverMovie(1),
@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div className="nav-container">
       <ul className="nav-items">
-        <li className="NavItem">
+        <li>
           <NavLink
             to="home"
             style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
