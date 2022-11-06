@@ -11,8 +11,7 @@ import "./../../pages/browse/browse.scss";
 const AllMovies = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [movieData, setMovieData] = useState("");
-  const [searchInput, setSearchInput] = useState("");
-  const { searchMovie, allMovie, discoverMovie, foundMovie } = useMovies();
+  const { discoverMovie, foundMovie } = useMovies();
 
   const movies = foundMovie.results;
 

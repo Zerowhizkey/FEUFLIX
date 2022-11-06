@@ -15,7 +15,7 @@ const Contact = () => {
         />
         <button className="home-button">
           <Link to="/browse">
-            <AiOutlineSearch className="search-icon"/>
+            <AiOutlineSearch className="search-icon" />
           </Link>
         </button>
       </header>
