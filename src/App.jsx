@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./app.scss";
 import Root from "./pages/Root";
-
 import Browse from "./pages/browse/Browse";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import { MovieProvider } from "./context/MovieContext";
+import "./app.scss";
 
 const router = createBrowserRouter([
   {
