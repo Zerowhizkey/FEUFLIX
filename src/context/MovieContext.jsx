@@ -14,9 +14,7 @@ export const MovieProvider = ({ children }) => {
   const [upcoming, setUpcoming] = useState([]);
   const [popular, setPopular] = useState([]);
   const [foundMovie, setFoundMovie] = useState([]);
-  const [allMovie, setAllMovie] = useState([]);
   const [category, setCategorie] = useState([]);
-  const [genre, setGenre] = useState(0);
   const [genreTitle, setGenreTitle] = useState("All Categories");
 
   const getUpcoming = async () => {
@@ -64,11 +62,9 @@ export const MovieProvider = ({ children }) => {
         searchMovie,
         foundMovie,
         setFoundMovie,
-        allMovie,
         discoverMovie,
         category,
         genreMovie,
-        genre,
         setGenreTitle,
         genreTitle,
       }}
