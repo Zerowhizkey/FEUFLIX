@@ -51,7 +51,7 @@ const handleAddProject = async () => {
 * Heading 5 Regular 16px 1rem
 * Body Mini Light 14px 0.875rem
 * Icons 35 px 
-* AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft - AiOutlineStar
+* AiOutlineSearch - AiOutlineUser - AiOutlineHome - AiOutlineCloseCircle - AiOutlineRight - AiOutlineLeft - AiOutlineStar - AiFillLinkedin - AiFillGithub - AiOutlineDown - AiOutlineCaretLeft - AiOutlineCaretRight
 * Images 130px width 
 * Card
 ```

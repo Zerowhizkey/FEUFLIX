@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { AiOutlineCloseCircle, AiOutlineStar } from "react-icons/ai";
-import "./modalMovie.scss";
 import { useMovies } from "../../context/MovieContext";
+import "./modalMovie.scss";
 
 const ModalMovie = ({ setIsOpen, movieData }) => {
   const { foundMovie } = useMovies();
