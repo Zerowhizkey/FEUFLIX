@@ -1,0 +1,55 @@
+$primary-color: #121421;
+$secondary-color: #2bb876;
+$font-color: #ffffff;
+
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 0.5fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 20px;
+  margin-bottom: 100px;
+
+  .card {
+    display: flex;
+    background: rgba(152, 144, 144, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(152, 144, 144, 0.3);
+    padding-top: 0.5em;
+    .card-image {
+      padding: 1em;
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.card-info {
+  padding: 1em;
+}
+
+.card-contact {
+  padding-top: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 100%;
+  padding: 0.5em;
+
+  svg {
+    color: $font-color;
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,31 @@
+.home-section {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 80px;
+  .movie-card {
+    height: 325px;
+  }
+  .img-box {
+    height: 195px;
+    img {
+      width: 130px;
+    }
+  }
+  .title-card {
+    display: flex;
+    flex-direction: column;
+
+    .rating {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
