@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { AiOutlineHome, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { useMovies } from "../../context/MovieContext";
-import "./navbar.scss";
+import "./navbar.scss"
 
 const Navbar = () => {
   const { genreMovie, discoverMovie, setFoundMovie, setGenreTitle } =
